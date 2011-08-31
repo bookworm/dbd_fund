@@ -1,0 +1,21 @@
+doctype 5
+html lang="en" 
+  head
+    meta charset="UTF-8"
+    title Design BreakDown Open Fund | I Break Stuff | Donation Completed - Thanks!
+    link href="favicon.ico" type="image/x-icon" rel="shortcut icon"
+    = include_css 'index'
+    = include_js :jquery, :bundle => 'index'
+  body
+    section#top.wrapper
+      header
+        a#logo.hideTxt href="http://http://#{ENV['DOMAIN']}"
+        #intro
+          h1 Thanks so much!
+          .desc
+            p
+              | Your donation has been made. Thanks allot! No matter the size of the donation, its really appreciated and will go
+              | a long way in helping me fund DBD. If you selected to have your name appear on the site, then your name will
+              | appear in the donators section on the site within an hour.
+        .clear
+  == partial "partials/footer"

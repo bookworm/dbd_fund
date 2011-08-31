@@ -1,0 +1,15 @@
+.block
+  .secondary-navigation
+    ul.wat-cf
+      li.first==link_to pat(:list), url(:priorities, :index)
+      li==link_to pat(:new), url(:priorities, :new)
+      li.active==link_to pat(:edit), url(:priorities, :edit, :id => @priority.id)
+  .content
+    h2.title
+      =pat(:edit)
+      =mt(:priority)
+    .inner
+      -form_for :priority, url(:priorities, :update, :id => @priority.id), :method => :put, :class => :form do |f|
+        == partial "priorities/form", :locals => { :f => f }
+
+-content_for :sidebar, partial("base/sidebar")

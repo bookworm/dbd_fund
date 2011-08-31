@@ -1,0 +1,35 @@
+.block
+  .secondary-navigation
+    ul.wat-cf
+      li.first.active==link_to pat(:list), url(:cashes, :index)
+      li==link_to pat(:new), url(:cashes, :new)
+  .content
+    h2.title
+      =pat(:all)
+      =mt(:cash)
+    .inner
+      table.table
+        tr
+          th.first=mat(:cash, :created_at)
+          th=mat(:cash, :made)
+          th=mat(:cash, :raised)
+          th=mat(:cash, :remaining)
+          th=mat(:cash, :expenses)
+          th=mat(:cash, :capital)
+          th.last="&nbsp;"
+        -@cashes.each do |cash|
+          tr
+            td.first=cash.created_at
+            td=cash.made
+            td=cash.raised
+            td=cash.remaining
+            td=cash.expenses
+            td=cash.capital
+            td.last
+              ==button_to pat(:edit), url(:cashes, :edit, :id => cash.id), :method => :get, :class => :button_to
+              ="|"
+              ==button_to pat(:delete), url(:cashes, :destroy, :id => cash.id), :method => :delete, :class => :button_to
+      .actions-bar.wat-cf
+        .actions="&nbsp;"
+
+-content_for :sidebar, partial("base/sidebar")

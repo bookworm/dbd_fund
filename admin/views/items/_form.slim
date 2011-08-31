@@ -1,0 +1,38 @@
+.group
+  ==f.label :name
+  ==f.error_message_on :name
+  ==f.text_field :name, :class => :text_field
+  span.description Ex: a simple text
+  
+.group
+  ==f.label :price
+  ==f.error_message_on :price
+  ==f.text_field :price, :class => :text_field
+  span.description Ex: a simple text
+
+.group.priority
+  ==f.label :priority
+  ==f.error_message_on :priority_id
+  ==f.select :priority_id, :collection => Priority.all, :fields => [:title, :id], :class => :text_field
+  span.description Ex: a simple text
+
+.group
+  ==f.label :raised
+  ==f.error_message_on :raised
+  ==f.text_field :raised, :class => :text_field
+  span.description Ex: a simple text
+
+.group
+  ==f.label :desc_source
+  ==f.error_message_on :desc
+  ==f.text_field :desc_source, :class => :text_field
+  span.description Ex: a simple text
+  
+.group
+  =image_tag(:image_url)
+  ==f.file_field :image
+  ==f.hidden_field :image_cache
+  
+.group.navform.wat-cf
+  ==f.submit pat(:save), :class => :button
+  ==f.submit pat(:cancel), :onclick => "window.location='#{url(:items, :index)}';return false", :class => :button

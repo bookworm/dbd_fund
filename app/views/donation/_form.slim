@@ -1,0 +1,8 @@
+==f.text_field :amount, :class => :text_field, :id => :amount, :title => "Enter Amount In Dollars", :size => 23
+==f.check_box :show_me, :uncheck_value => 'false', :id => :show_me
+span.field_desc Show my name on this site
+
+#donor_details style="display:none;"
+  ==f.text_field :name, :class => :text_field, :id => :first_name, :title => "First Name, Last Name", :size => 18
+
+==f.submit :submit, :class => "button hideTxt"

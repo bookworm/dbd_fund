@@ -1,0 +1,24 @@
+ul#needed_items.items
+  - @items.each_with_index do |@item, index|
+    - chart_size
+    - real_index = index + 1
+    - real_index % 2 == 0 ? item_class = 'even' : item_class = 'odd'
+    li.item class="#{item_class} item" id="item_#{@item.name.downcase}"
+      .num class="num_#{real_index}"
+      .img_title_wrap style="margin-top:#{@title_margin}px;"
+        img src==@item.image.url
+        h3.name= @item.name
+      .chart
+        .raised style="margin-top:#{@r_margin}px;"
+          .amount= "$#{@item.raised}" 
+          .top style="height:#{@r_top_height}px;"
+          .center style="height:#{@r_height}px;"
+          .bottom style="height:#{@r_bottom_height}px;"
+        .price
+          .amount= "$#{@item.price}"
+          .top style="height:#{@p_top_height}px;"
+          .center style="height:#{@p_height}px;"
+          .bottom style="height:#{@p_bottom_height}px;"
+      .desc
+        == @item.desc
+      .clear

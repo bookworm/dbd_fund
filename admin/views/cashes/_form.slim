@@ -1,0 +1,33 @@
+.group
+  ==f.label :made
+  ==f.error_message_on :made
+  ==f.text_field :made, :class => :text_field
+  span.description Ex: a simple text
+
+.group
+  ==f.label :remaining
+  ==f.error_message_on :remaining
+  ==f.text_field :remaining, :class => :text_field
+  span.description Ex: a simple text
+
+.group
+  ==f.label :raised
+  ==f.error_message_on :raised
+  ==f.text_field :raised, :class => :text_field
+  span.description Ex: a simple text
+
+.group
+  ==f.label :expenses
+  ==f.error_message_on :expenses
+  ==f.text_field :expenses, :class => :text_field
+  span.description Ex: a simple text
+
+.group
+  ==f.label :capital
+  ==f.error_message_on :capital
+  ==f.text_field :capital, :class => :text_field
+  span.description Ex: a simple text
+
+.group.navform.wat-cf
+  ==f.submit pat(:save), :class => :button
+  ==f.submit pat(:cancel), :onclick => "window.location='#{url(:cashes, :index)}';return false", :class => :button

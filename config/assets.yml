@@ -1,0 +1,12 @@
+asset_host: "http://assets%d-fund.designbreakdown.com"         
+js:
+  bundles:
+    index:
+      - jquery.easing  
+      - jquery.mediaqueries 
+      - cufon 
+      - Muse.font
+      - hoverflow 
+      - jquery.scrollTo-1.4.2   
+      - jquery.labelify
+      - index

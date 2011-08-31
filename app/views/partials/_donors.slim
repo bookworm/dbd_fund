@@ -1,0 +1,9 @@
+ul#donors
+  - @donors.each do |@donor|
+    li.donor
+      .meta
+        h3.name=@donor.name
+      .donated
+        | Donated
+        | \ 
+      .amount="$#{@donor.amount}" 

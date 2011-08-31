@@ -1,0 +1,147 @@
+@import "partials/reset";
+@import "partials/base";       
+@import "partials/forms";  
+@import "number/*.png";
+
+#logo {
+  background: image-url('header/logo.png');
+  width: 113px;
+  height: 52px;
+}
+
+         section { padding-top: 50px; margin-bottom: 50px; }
+          #intro { width: 542px; float: left; }
+       #intro h1 { background: #fff; padding: 6px 6px 2px 6px; font-size: 35px; float: left; }
+           .desc { float: left; margin-top: 12px; }
+     .disclaimer { font-size: 11px; line-height: 16px; }
+.disclaimer .num { font-weight: bold }   
+ 
+#donate { width: 333px; float: right; }  
+  #donate h2 {
+    background: image-url('donate-bg.png') no-repeat;
+    width: 106px;
+    height: 37px;
+    margin: 12px 0 27px 0;
+  }
+
+  #donate .button {
+    background: image-url('submit-default.png') no-repeat;
+    width: 91px;
+    height: 46px;
+    border: none;
+  }
+              #donate .button:hover { background: image-url('submit-hover.png') no-repeat }
+             #donate .button:active,
+              #donate .button:focus { background: image-url('submit-active.png') no-repeat }
+  #donate .button::-moz-focus-inner,
+             #donate .button:active,
+              #donate .button:focus { border: none; -moz-outline-style: none; outline: none; }
+
+.sect_title {
+  color: #333;
+  float: none;
+  text-align: center;
+}
+   
+  .sect_title span { padding: 8px 6px 2px 6px; font-size: 35px; }      
+
+                   #money { text-align: center }
+  #money .sect_title span { background: #7ecc6f }
+            #money .label { color: #7b7a7a }
+                #money li { color: #4f4f4f; font-size: 15px; margin-top: 5px; }
+
+#needed .sect_title span,
+#donors .sect_title span { background: #e64144; text-shadow: #930000 1px 1px 1px; color: #fff; }
+#wanted .sect_title span { background: #80b5dd; text-shadow: #930000 1px 1px 1px; color: #fff; }
+ 
+.item.even { margin-top: 50px; } 
+
+  .num { width: 19px; height: 26px; }  
+.num_1 { @include number-sprite(one); }    
+.num_2 { @include number-sprite(two); }
+.num_3 { @include number-sprite(three); }
+.num_4 { @include number-sprite(four); }
+.num_5 { @include number-sprite(five); }  
+.num_6 { @include number-sprite(six); }
+.num_7 { @include number-sprite(seven); }
+.num_8 { @include number-sprite(eight); }
+.num_9 { @include number-sprite(nine); }
+                               
+.raised, .price, .item .img_title_wrap, .item .chart, .item { float: left; }
+
+.raised
+{  
+     .top,
+  .bottom,
+  .center { width: 39px }
+     .top { height: 13px; @include number-sprite(chart_raised-top); }
+  .center { background: image-url('chart_centers/chart_raised-center.png') repeat-y }
+  .bottom { height: 14px; @include number-sprite(chart_raised-bottom); }
+}
+
+.price
+{  
+     .top,
+  .bottom,
+  .center { width: 59px }
+     .top { height: 27px; @include number-sprite(chart_price-top); }
+  .center { background: image-url('chart_centers/chart_price-center.png') repeat-y }
+  .bottom { height: 48px; @include number-sprite(chart_price-bottom); }
+} 
+
+.item img {
+  display: block;
+  height: 84px;
+  margin-left: 25px;
+  width: 84px;                
+}              
+
+.item .chart { margin-left: 25px; }   
+
+.item .desc {
+  font-size: 12px;
+  line-height: 20px;
+  margin: 25px 0 0 15px;
+  width: 715px;
+}
+
+.item h3 {
+  text-align: center;
+  font-size: 23px;
+  color: #7b7a7a;
+  position: absolute;
+  padding-left: 10px;
+  font-weight: normal;
+  margin-top: 14px;
+}
+      
+               .item .amount { color: #3d434c; font-size: 16px; }
+               #item_ipad h3 { padding-left: 50px; margin-top: 0px; }
+  #item_ipad .img_title_wrap { padding-top: 14px }    
+                                                      
+#logo {
+  background: image-url('logo.png');
+  width: 113px;
+  height: 52px;
+  position: absolute;
+  left: 15px;
+  top: 15px;
+}
+
+
+#footer_wrap { margin: 0 auto; width: 990px; }
+#footer_line { background: image-url('footer-line.png') repeat-x scroll 0 0 transparent; height: 2px; margin: 25px 0 10px; }
+#footer_copy,
+       .copy { font-size: 11px }
+#footer_copy { margin: 10px 0 }
+#footer_line,
+#footer_copy { float: left; width: 100%; }
+       .copy { float: left; line-height: 14px; }
+.link_to_top { float: right }    
+
+.donor .donated { margin-right: 2px }
+.donor .donated,
+ .donor .amount { float: left }
+   .donor .name,
+ .donor .amount { font-weight: bold }
+   .donor .name { font-size: 16px }

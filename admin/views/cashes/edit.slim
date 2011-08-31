@@ -1,0 +1,15 @@
+.block
+  .secondary-navigation
+    ul.wat-cf
+      li.first==link_to pat(:list), url(:cashes, :index)
+      li==link_to pat(:new), url(:cashes, :new)
+      li.active==link_to pat(:edit), url(:cashes, :edit, :id => @cash.id)
+  .content
+    h2.title
+      =pat(:edit)
+      =mt(:cash)
+    .inner
+      -form_for :cash, url(:cashes, :update, :id => @cash.id), :method => :put, :class => :form do |f|
+        == partial "cashes/form", :locals => { :f => f }
+
+-content_for :sidebar, partial("base/sidebar")

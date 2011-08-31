@@ -1,0 +1,64 @@
+doctype 5
+html lang="en" 
+  head
+    meta charset="UTF-8"
+    title Design BreakDown Open Fund | I Break Stuff
+    link href="favicon.ico" type="image/x-icon" rel="shortcut icon"
+    == include_css 'index'
+    == include_js :jquery, :bundle => 'index'
+  body
+    section#top.wrapper
+      header
+        a#logo.hideTxt href=="http://#{ENV['DOMAIN']}"
+        #intro
+          h1 Open Funding
+          .desc
+            p
+              | This is a page where you can keep an eye on the DBD financial situations <sup>*1</sup> and help fund the projects
+              | where you desire to see more action.  In these early days I know I could use the help. Sometimes one's dreams are
+              | truly limited by money.
+            p.disclaimer
+              | <span class="num">1.</span> <em>Legal Disclaimer:</em> The data contained on this page does <strong>not</strong>
+              | accurately reflect the finances of <strong>Design BreakDown, LLC</strong>. None of the data should be considered
+              | official/canon, it is <strong>not</strong> meant to be used for any <strong>legal</strong> and or
+              | <strong>financial</strong> purposes.
+        #donate
+          h2.hideTxt Donate
+          -form_for "donation", url(:main, :donate), :class => :form, :id => :donate_form do |f|
+            == partial "donation/form", :locals => { :f => f }
+          == payment_service_for_paypal @donation_num_id, ENV['PAYPAL_ACCOUNT'], :service => :paypal
+        .clear
+    section#needed.wrapper
+      header
+        h1.sect_title
+          span Needed
+        - @items = @needs
+      == partial "partials/items"
+      .clear
+    section#wanted.wrapper
+      header
+        h1.sect_title
+          span Wanted
+        - @items = @wants
+      == partial "partials/items"
+      .clear
+    section#money.wrapper
+      header
+        h1.sect_title
+          span Cash
+      ul
+        li.capital
+          span.label Cash on hand:
+          = "$#{@cash.capital}"
+        li.donated
+          span.label Cash donated:
+          = "$#{@cash.raised}"
+        li.made
+          span.label Cash made:
+          = "$#{@cash.made}"
+    section#donors.wrapper
+      header
+        h1.sect_title
+          span Donors
+      == partial "partials/donors"
+  == partial "partials/footer"

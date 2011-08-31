@@ -1,0 +1,63 @@
+.group
+  ==f.label :salt
+  ==f.error_message_on :salt
+  ==f.text_field :salt, :class => :text_field
+  span.description Ex: a simple text
+
+.group
+  ==f.label :crypted_password
+  ==f.error_message_on :crypted_password
+  ==f.text_field :crypted_password, :class => :text_field
+  span.description Ex: a simple text
+
+.group
+  ==f.label :provider_uid
+  ==f.error_message_on :provider_uid
+  ==f.text_field :provider_uid, :class => :text_field
+  span.description Ex: a simple text
+
+.group
+  ==f.label :username
+  ==f.error_message_on :username
+  ==f.text_field :username, :class => :text_field
+  span.description Ex: a simple text
+
+.group
+  ==f.label :last_name
+  ==f.error_message_on :last_name
+  ==f.text_field :last_name, :class => :text_field
+  span.description Ex: a simple text
+
+.group
+  ==f.label :purchases
+  ==f.error_message_on :purchases
+  ==f.text_field :purchases, :class => :text_field
+  span.description Ex: a simple text
+
+.group
+  ==f.label :roles
+  ==f.error_message_on :roles
+  ==f.text_field :roles, :class => :text_field
+  span.description Ex: a simple text
+
+.group
+  ==f.label :provider
+  ==f.error_message_on :provider
+  ==f.text_field :provider, :class => :text_field
+  span.description Ex: a simple text
+
+.group
+  ==f.label :email
+  ==f.error_message_on :email
+  ==f.text_field :email, :class => :text_field
+  span.description Ex: a simple text
+
+.group
+  ==f.label :first_name
+  ==f.error_message_on :first_name
+  ==f.text_field :first_name, :class => :text_field
+  span.description Ex: a simple text
+
+.group.navform.wat-cf
+  ==f.submit pat(:save), :class => :button
+  ==f.submit pat(:cancel), :onclick => "window.location='#{url(:accounts, :index)}';return false", :class => :button
